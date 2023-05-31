@@ -128,7 +128,7 @@ class LoginScreen extends StatelessWidget {
       final _result = await ApiClass().loginUserApi(_formData);
       if (_result != null) {
         if (_result.status == true) {
-          showSuccessMessage(_result.message!);
+          //showSuccessMessage(_result.message!);
           Navigator.of(_scaffoldkey.currentContext!)
               .push(MaterialPageRoute(builder: (ctx) {
             return HomeScreen();
