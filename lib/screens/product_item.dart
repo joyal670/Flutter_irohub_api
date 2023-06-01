@@ -16,22 +16,54 @@ class ProductItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      child: Material(
+    return Material(
+      borderRadius: const BorderRadius.all(Radius.circular(10)),
+      child: InkWell(
+        onTap: () {},
         child: Container(
           alignment: Alignment.topCenter,
           decoration: BoxDecoration(
-              border: Border.all(style: BorderStyle.solid),
-              borderRadius: BorderRadius.circular(10)),
+            border: Border.all(style: BorderStyle.none),
+          ),
           child: Column(
             children: [
-              Container(
+              SizedBox(
                 height: 100,
                 child: Image.network(pImage),
               ),
-              Text(pName),
-              Text(pPrice),
-              Text(pSize),
+              Text(
+                pName,
+                style: const TextStyle(
+                    color: Colors.black,
+                    fontSize: 20,
+                    fontStyle: FontStyle.normal,
+                    fontWeight: FontWeight.w800),
+                textAlign: TextAlign.center,
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      'RS - $pPrice',
+                      style: const TextStyle(
+                          color: Colors.red,
+                          fontSize: 20,
+                          fontStyle: FontStyle.normal,
+                          fontWeight: FontWeight.bold),
+                    ),
+                    Text(
+                      'Size - $pSize',
+                      style: const TextStyle(
+                          color: Colors.black,
+                          fontSize: 12,
+                          fontStyle: FontStyle.italic,
+                          fontWeight: FontWeight.normal),
+                    ),
+                  ],
+                ),
+              )
             ],
           ),
         ),

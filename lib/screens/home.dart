@@ -14,6 +14,7 @@ class HomeScreen extends StatelessWidget {
     });
 
     return Scaffold(
+      backgroundColor: Color.fromRGBO(233, 233, 233, 1),
       body: SafeArea(
           child: ValueListenableBuilder(
               valueListenable: ApiClass.instance.productNotifier,
@@ -26,7 +27,6 @@ class HomeScreen extends StatelessWidget {
                   children: List.generate(newProduct.length, (index) {
                     final product =
                         ApiClass.instance.productNotifier.value[index];
-                    print(product);
                     return ProductItem(
                         pName: product.pname,
                         pSize: product.size,
